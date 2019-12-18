@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Login extends React.Component {
     render() {
         return (
             <body className="bg-gradient-primary">
-                <div className="container">
+            <div className="container">
 
-                    <div className="row justify-content-center">
+                <div className="row justify-content-center">
 
                     <div className="col-xl-10 col-lg-12 col-md-9">
                         <div className="card o-hidden border-0 shadow-lg my-5">
@@ -22,21 +22,25 @@ class Login extends React.Component {
                                             </div>
                                             <form className="user">
                                                 <div className="form-group">
-                                                    <input type="email" className="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..."/>
+                                                    <input type="email" className="form-control form-control-user"
+                                                           id="exampleInputEmail" aria-describedby="emailHelp"
+                                                           placeholder="Enter Email Address..."/>
                                                 </div>
                                                 <div className="form-group">
-                                                    <input type="password" className="form-control form-control-user" id="exampleInputPassword" placeholder="Password"/>
+                                                    <input type="password" className="form-control form-control-user"
+                                                           id="exampleInputPassword" placeholder="Password"/>
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="custom-control custom-checkbox small">
-                                                        <input type="checkbox" className="custom-control-input" id="customCheck"/>
+                                                        <input type="checkbox" className="custom-control-input"
+                                                               id="customCheck"/>
                                                     </div>
                                                 </div>
-                                                <Link to="" className="btn btn-primary btn-user btn-block">Login</Link>
+                                                <Link to="/admin"
+                                                      className="btn btn-primary btn-user btn-block">Login</Link>
                                                 <div className="text-center">
-                                                    <Link to="" className="small">Create an Account!</Link>
+                                                    <Link className="small" to={"/signUp"}>Create an Account!</Link>
                                                 </div>
-
                                             </form>
                                         </div>
                                     </div>
@@ -45,10 +49,11 @@ class Login extends React.Component {
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
 
             </body>
         )
     }
 }
+
 export default Login;
