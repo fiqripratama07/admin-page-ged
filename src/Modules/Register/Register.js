@@ -47,7 +47,7 @@ class Register extends React.Component {
                                                                placeholder="Repeat Password"/>
                                                     </div>
                                                 </div>
-                                                <Link to="" className="btn btn-primary btn-user btn-block">Register
+                                                <Link to="/signIn" className="btn btn-primary btn-user btn-block">Register
                                                     Account</Link>
                                             </form>
                                             <hr/>

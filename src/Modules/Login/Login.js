@@ -1,7 +1,21 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
+import {connect} from 'react-redux';
 
 class Login extends React.Component {
+
+    handleChangeEmail = (event) => {
+        console.log("EMAIL", event.target.value);
+        const email = event.target.value;
+        this.props.dispatch({type: 'LOGIN_SUCCESS', login: {...this.props.login, login: email}})
+    }
+
+    handleChangePassword = (event) => {
+        console.log("PASSWORD", event.target.value);
+        const password = event.target.value;
+        this.props.dispatch({type: 'LOGIN_SUCCESS', login: {...this.props.login, login: password}})
+    }
+
     render() {
         return (
             <body className="bg-gradient-primary">
@@ -23,12 +37,14 @@ class Login extends React.Component {
                                             <form className="user">
                                                 <div className="form-group">
                                                     <input type="email" className="form-control form-control-user"
-                                                           id="exampleInputEmail" aria-describedby="emailHelp"
+                                                           id="exampleInputEmail" onChange={this.handleChangeEmail}
+                                                           aria-describedby="emailHelp"
                                                            placeholder="Enter Email Address..."/>
                                                 </div>
                                                 <div className="form-group">
                                                     <input type="password" className="form-control form-control-user"
-                                                           id="exampleInputPassword" placeholder="Password"/>
+                                                           id="exampleInputPassword"
+                                                           onChange={this.handleChangePassword} placeholder="Password"/>
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="custom-control custom-checkbox small">
@@ -36,7 +52,7 @@ class Login extends React.Component {
                                                                id="customCheck"/>
                                                     </div>
                                                 </div>
-                                                <Link to="/admin"
+                                                <Link to={"/admin"}
                                                       className="btn btn-primary btn-user btn-block">Login</Link>
                                                 <div className="text-center">
                                                     <Link className="small" to={"/signUp"}>Create an Account!</Link>
@@ -56,4 +72,8 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+function mapStateToProps(state) {
+    return {...state.login}
+}
+
+export default connect(mapStateToProps)(Login)

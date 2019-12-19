@@ -5,6 +5,7 @@ import './style/css/index.css';
 import './style/css/all.css';
 import './style/css/style.css';
 import './style/css/sb-admin-2.css';
+import './style/css/fontawesome.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
