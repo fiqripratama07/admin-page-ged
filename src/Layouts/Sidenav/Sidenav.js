@@ -8,32 +8,37 @@ import line from "../../images/line.png";
 class Sidenav extends React.Component {
     render() {
         return (
-            <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-                <Link to="/admin" className="sidebar-brand d-flex align-items-center justify-content-center">
-                    <div className="sidebar-brand-icon rotate-n-15">
-                        <img src={truck} style={{height: '60px', width: '60px'}}/>
+            <div>
+                <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                    id="accordionSidebar">
+                    <Link to="/admin"
+                          className="sidebar-brand d-flex align-items-center justify-content-center">
+                        <div className="sidebar-brand-icon rotate-n-15">
+                            <img src={truck} style={{height: '60px', width: '60px'}}/>
+                        </div>
+                        <div className="sidebar-brand-text mx-3">GED</div>
+                    </Link>
+                    <div className="hr"/>
+                    <br/>
+                    <img src={line}/>
+                    <div className="sidebar-divider my-0">
+                        <li className="nav-item active">
+                            <Link to="/admin" className="nav-link">
+                                <img src={dashboard}
+                                     style={{height: '40px', width: '40px', marginRight: '10px'}}/>
+                                <span>Dashboard</span></Link>
+                        </li>
                     </div>
-                    <div className="sidebar-brand-text mx-3">GED</div>
-                </Link>
-                <div className="hr"/>
-                <br/>
-                <img src={line}/>
-                <div className="sidebar-divider my-0">
-                    <li className="nav-item active">
-                        <Link to="/admin" className="nav-link">
-                            <img src={dashboard} style={{height: '40px', width: '40px', marginRight: '10px'}}/>
-                            <span>Dashboard</span></Link>
-                    </li>
-                </div>
-                <div className="sidebar-divider my-0">
-                    <li className="nav-item active">
-                        <Link to="/post-form" className="nav-link">
-                            <img src={trans} style={{height: '40px', width: '40px', marginRight: '10px'}}/>
-                            <span>Transaction</span></Link>
-                    </li>
-                </div>
-            </ul>
+                    <div className="sidebar-divider my-0">
+                        <li className="nav-item active">
+                            <Link to="/post-form" className="nav-link">
+                                <img src={trans}
+                                     style={{height: '40px', width: '40px', marginRight: '10px'}}/>
+                                <span>Transaction</span></Link>
+                        </li>
+                    </div>
+                </ul>
+            </div>
         )
     }
 }

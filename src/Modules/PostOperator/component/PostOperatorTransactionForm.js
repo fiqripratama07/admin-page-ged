@@ -1,6 +1,28 @@
 import React from "react";
+import {connect} from 'react-redux';
+import * as PostOperatorServices from '../services/PostOperatorService';
 
-class PostOperatorForm extends React.Component {
+
+class PostOperatorTransactionForm extends React.Component {
+
+    MenuLoad() {
+        const {dispatch, loading, locations} = this.props;
+        console.log('load locations', locations);
+        PostOperatorServices.listLocation()
+            .then((locations) => {
+                dispatch({type: 'LIST_LOCATION', loading, locations});
+            })
+            .catch((err) => {
+                dispatch({type: 'LIST_LOCATION', loading, locations: []});
+            })
+        console.log("GET", locations);
+    }
+
+    componentDidMount() {
+        if (this.props.loading) {
+            this.MenuLoad();
+        }
+    }
     render() {
         return (
             <div>
@@ -12,7 +34,8 @@ class PostOperatorForm extends React.Component {
                                     <div className="card-body p-0">
                                         <div className="row justify-content-center">
                                             <div className="col-md-12 p-3">
-                                                <h3 className="text-center" style={{marginTop:'50px'}}>Form Transaction</h3>
+                                                <h3 className="text-center" style={{marginTop: '50px'}}>Form
+                                                    Transaction</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +52,10 @@ class PostOperatorForm extends React.Component {
                                                 <label>Address Origin</label>
                                                 <select className="form-control custom-select mr-sm-3"
                                                         id="type-menu" required>
-                                                    <option>Select Origin</option>
+                                                    <option selected>Choose Origin</option>
+                                                    {this.props.locations.map((loc)=>{
+                                                        return(<option value={loc.id}>{loc.name}</option>)
+                                                    })}
                                                 </select>
                                             </div>
                                             <div className="form-group">
@@ -42,8 +68,9 @@ class PostOperatorForm extends React.Component {
                                                 <label>Address Destination</label>
                                                 <select className="custom-select mr-sm-3" id="type-menu">
                                                     <option selected>Choose Destination</option>
-                                                    <option value="Tony Black">Tony Black</option>
-                                                    <option value="Alan Turing">Alan Turing</option>
+                                                    {this.props.locations.map((loc)=>{
+                                                        return(<option value={loc.id}>{loc.name}</option>)
+                                                    })}
                                                 </select>
                                             </div>
                                             <div className="form-group">
@@ -62,7 +89,7 @@ class PostOperatorForm extends React.Component {
                                                     Cancel
                                                 </button>
                                                 <button type="button"
-                                                        style={{marginBottom:'30px'}}
+                                                        style={{marginBottom: '30px'}}
                                                         className="btn btn-outline-success btn-user btn-block">
                                                     Save Order
                                                 </button>
@@ -79,4 +106,8 @@ class PostOperatorForm extends React.Component {
     }
 }
 
-export default PostOperatorForm;
+function mapStateToProps(state) {
+    return {...state.transaction}
+}
+
+export default connect(mapStateToProps)(PostOperatorTransactionForm);
