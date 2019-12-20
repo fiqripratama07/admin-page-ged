@@ -52,7 +52,7 @@ class Register extends React.Component {
                                             </form>
                                             <hr/>
                                             <div className="text-center">
-                                                <Link to="/signIn" className="small">Already have an account?
+                                                <Link to="/" className="small">Already have an account?
                                                     Login!</Link>
                                             </div>
                                         </div>
