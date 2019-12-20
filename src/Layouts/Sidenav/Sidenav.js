@@ -1,8 +1,9 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
-import truck from "../../../images/truck.png";
-import dashboard from "../../../images/book.png";
-import back from "../../../images/back.png";
+import truck from "../../images/truck.png";
+import dashboard from "../../images/book.png";
+import trans from "../../images/trans.png";
+import line from "../../images/line.png";
 
 class Sidenav extends React.Component {
     render() {
@@ -11,22 +12,26 @@ class Sidenav extends React.Component {
 
                 <Link to="/admin" className="sidebar-brand d-flex align-items-center justify-content-center">
                     <div className="sidebar-brand-icon rotate-n-15">
-                        <img src={truck}/>
+                        <img src={truck} style={{height: '60px', width: '60px'}}/>
                     </div>
                     <div className="sidebar-brand-text mx-3">GED</div>
                 </Link>
                 <div className="hr"/>
                 <br/>
+                <img src={line}/>
                 <div className="sidebar-divider my-0">
                     <li className="nav-item active">
-                        <Link to="/" className="nav-link">
-                            <img src={dashboard} style={{height: '20px', width: '20px', marginRight: '10px'}}/>
+                        <Link to="/admin" className="nav-link">
+                            <img src={dashboard} style={{height: '40px', width: '40px', marginRight: '10px'}}/>
                             <span>Dashboard</span></Link>
                     </li>
                 </div>
-                <hr className="sidebar-divider d-none d-md-block"/>
-                <div className="text-center d-none d-md-inline">
-                    <Link to={"/signIn"}><img src={back} style={{height: '40px', width: '40px', marginRight: '10px'}}/></Link>
+                <div className="sidebar-divider my-0">
+                    <li className="nav-item active">
+                        <Link to="/post-form" className="nav-link">
+                            <img src={trans} style={{height: '40px', width: '40px', marginRight: '10px'}}/>
+                            <span>Transaction</span></Link>
+                    </li>
                 </div>
             </ul>
         )
