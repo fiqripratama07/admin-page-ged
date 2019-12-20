@@ -2,7 +2,7 @@ import React from 'react';
 import Sidenav from "../../Layouts/Sidenav/Sidenav";
 import Header from "../../Layouts/Header/Header";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import PostOperatorForm from "../PostOperator/PostOperatorForm";
+import PostOperatorForm from "../PostOperator/component/PostOperatorTransactionForm";
 
 class AdminContainer extends React.Component {
     render() {

@@ -1,0 +1,12 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "type": "postOperator",
+      "menu": {
+        "link": "/post-form",
+        "name": "Transaction"
+      }
+    }
+  ]
+}
