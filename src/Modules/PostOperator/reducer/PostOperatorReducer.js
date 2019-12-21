@@ -2,7 +2,7 @@ const initialState = {
     listTransaction: [],
     locations:[],
     loading: true,
-
+    people:[],
     showTransaction: {
         totalPrice: null,
         originName: "",
@@ -27,7 +27,8 @@ const initialState = {
 
 
 export default function PostOperatorReducer(state = initialState, action) {
-    const {type, listTransaction, loading, showTransaction, locations ,addTransaction} = action;
+    console.log("reducer", action)
+    const {type, listTransaction, loading, showTransaction, locations ,addTransaction, payload} = action;
     switch (type) {
         case 'LIST_TRANSACTION':
             return {...state, loading: true, listTransaction}
@@ -35,6 +36,8 @@ export default function PostOperatorReducer(state = initialState, action) {
             return {...state, addTransaction}
         case 'LIST_LOCATION':
             return {...state,loading: true,locations}
+        case 'LIST_PEOPLE':
+            return {...state, loading: true, people:payload}
         default:
             return state;
     }
