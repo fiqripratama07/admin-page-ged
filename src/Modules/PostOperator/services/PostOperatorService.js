@@ -5,7 +5,15 @@ export async function listLocation(){
         .then((res)=>res.data)
 }
 
-// export async function save(params){
-//     return await Api.post(`menu`,params)
-//         .then((resp)=>resp.data)
-// }
+export async function listPeople() {
+    return await Api.get('posts')
+        .then((res)=>res.data)
+}
+
+export async function fetchDataListPeople() {
+    return await fetch("https://jsonplaceholder.typicode.com/posts", {method: "GET"})
+        .then((response) => {
+                return response.json();
+            }
+        );
+}
