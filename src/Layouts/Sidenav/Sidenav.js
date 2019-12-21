@@ -4,6 +4,9 @@ import truck from "../../images/truck.png";
 import dashboard from "../../images/book.png";
 import trans from "../../images/trans.png";
 import line from "../../images/line.png";
+import Dropdown from "react-bootstrap/Dropdown";
+import ListItemText from '@material-ui/core/ListItemText';
+import "./Style.css";
 
 class Sidenav extends React.Component {
     render() {
@@ -31,10 +34,18 @@ class Sidenav extends React.Component {
                     </div>
                     <div className="sidebar-divider my-0">
                         <li className="nav-item active">
-                            <Link to="/post-form" className="nav-link">
-                                <img src={trans}
-                                     style={{height: '40px', width: '40px', marginRight: '10px'}}/>
-                                <span>Transaction</span></Link>
+                            <Dropdown style={{backgroundColor: '#F69314', borderColor: '#F69314'}}>
+                                <Dropdown.Toggle style={{backgroundColor: '#F69314'}}>
+                                    <img src={trans}
+                                         style={{height: '40px', width: '40px', marginRight: '10px'}}/>
+                                    <span>Transaction</span>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item><Link to={"/add-transaction"}><ListItemText>Add
+                                        Transaction</ListItemText></Link></Dropdown.Item>
+                                    <Dropdown.Item><Link to={"/transactions"}>List Transaction</Link></Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </li>
                     </div>
                 </ul>
