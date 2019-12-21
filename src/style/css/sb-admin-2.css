@@ -9363,7 +9363,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #4e73df !important;
+  color: #F69314 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -9685,8 +9685,8 @@ a:focus {
 }
 
 .bg-gradient-info {
-  background-color: #36b9cc;
-  background-image: linear-gradient(180deg, #36b9cc 10%, #258391 100%);
+  background-color: #F69314;
+  background-image: linear-gradient(180deg, #F69314 10%, #F69314 100%);
   background-size: cover;
 }
 
