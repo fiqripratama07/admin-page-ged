@@ -3,6 +3,7 @@ import Sidenav from "../../Layouts/Sidenav/Sidenav";
 import Header from "../../Layouts/Header/Header";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import PostOperatorForm from "../PostOperator/component/PostOperatorTransactionForm";
+import ListUser from "./components/ListUser";
 
 class AdminContainer extends React.Component {
     render() {
@@ -14,10 +15,11 @@ class AdminContainer extends React.Component {
                             <Sidenav/>
                             <div id="content-wrapper" className="d-flex flex-column">
                                 <div id="content">
-                                    <Header/>
-                                    <div className="container-fluid">
+                                    {/*<Header/>*/}
+                                    <div className="container-fluid" >
                                         <Switch>
                                             <Route path={"/post-form"}><PostOperatorForm/></Route>
+                                            <Route path={"/list-users"}><ListUser/></Route>
                                         </Switch>
                                     </div>
                                 </div>
