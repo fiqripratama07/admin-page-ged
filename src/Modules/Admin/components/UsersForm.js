@@ -6,16 +6,16 @@ class UsersForm extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <div className="container-fluid">
-                        <div className="row justify-content-center">
-                            <div className="col-xl-12 col-lg-12 col-md-12">
+                <div className="card o-hidden border-0 shadow-lg my-2"
+                     style={{marginRight: '20px', marginTop: '100px', marginBottom: '100px', minHeight: "900px"}}>
+                    <div className="margin-10px">
+                        <div className="card shadow mb-4">
+                            <div className="card-header py-3">
                                 <div className="card o-hidden border-0 shadow-lg my-2">
                                     <div className="card-body p-0">
                                         <div className="row justify-content-center">
                                             <div className="col-md-12 p-3">
-                                                <h3 className="text-center" style={{marginTop: '50px'}}>Form
-                                                    Transaction</h3>
+                                                <h3 className="text-center" style={{marginTop: '50px'}}>Form Users</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -23,38 +23,21 @@ class UsersForm extends React.Component {
                                     <div className="container">
                                         <form className="user">
                                             <div className="form-group">
-                                                <label>Origin Name</label>
+                                                <label>Username</label>
                                                 <input type="text" className="form-control form-control-user"
-                                                       placeholder="Enter Origin Name. . ."
+                                                       placeholder="Enter Username. . ."
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label>Address Origin</label>
-                                                <select className="form-control custom-select mr-sm-3"
-                                                        id="type-menu" required>
-                                                    <option selected>Choose Origin</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <label>Destination Name</label>
+                                                <label>Password</label>
                                                 <input type="text" className="form-control form-control-user"
-                                                       placeholder="Enter Destination Name. . ."
+                                                       placeholder="Enter Password. . ."
                                                 />
                                             </div>
                                             <div className="form-group">
-                                                <label>Address Destination</label>
-                                                <select className="custom-select mr-sm-3" id="type-menu">
-                                                    <option selected>Choose Destination</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <label>Input Package</label>
+                                                <label>Email</label>
                                                 <input type="text" className="form-control form-control-user"
-                                                       placeholder="Enter Package Name. . ."
-                                                />
-                                                <br/>
-                                                <input type="text" className="form-control form-control-user"
-                                                       placeholder="Enter Package Weight. . ."
+                                                       placeholder="Enter Email. . ."
                                                 />
                                             </div>
                                             <div className="form-group col">
@@ -65,7 +48,7 @@ class UsersForm extends React.Component {
                                                 <button type="button"
                                                         style={{marginBottom: '30px'}}
                                                         className="btn btn-outline-success btn-user btn-block">
-                                                    Save Order
+                                                    Save User
                                                 </button>
                                             </div>
                                         </form>

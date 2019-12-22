@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
 
                                 <div className="site-logo">
                                     <Link to={"/"} className="text-black"><span
-                                        className="text-primary">GED</span></Link>
+                                        style={{color:'#F69314'}}>GED</span></Link>
                                 </div>
 
                                 <div className="col-12">
@@ -76,7 +76,7 @@ class LandingPage extends React.Component {
                                             <div className="form-group d-flex">
                                                 <input type="text" className="form-control"
                                                        placeholder="Enter your tracking number"/>
-                                                <button type="submit" className="btn btn-primary text-white px-4"
+                                                <button type="submit"  style={{color:'#F69314', backgroundColor:'white', borderRadius:'10px', width:'100px'}}
                                                 >Track
                                                 </button>
                                             </div>
@@ -92,7 +92,7 @@ class LandingPage extends React.Component {
                                         <a href="#"><img src={Ship} alt="Image"
                                                          className="img-fluid" style={{height: '225px'}}/></a>
                                         <div className="px-md-3">
-                                            <h3 className="text-primary">Sea Freight</h3>
+                                            <h3  style={{color:'#F69314'}}>Sea Freight</h3>
                                             <p>Far far away, behind the word mountains, far from the countries Vokalia
                                                 and
                                                 Consonantia.</p>
@@ -100,9 +100,9 @@ class LandingPage extends React.Component {
                                     </div>
                                     <div className="service text-center">
                                         <a href="#"><img src="images/cargo_delivery_small.jpg" alt="Image"
-                                                         className="img-fluid"/></a>
+                                                         className="img-fluid" style={{height: '225px'}}/></a>
                                         <div className="px-md-3">
-                                            <h3 className="text-primary">Package Forwarding</h3>
+                                            <h3  style={{color:'#F69314'}}>Package Forwarding</h3>
                                             <p>Far far away, behind the word mountains, far from the countries Vokalia
                                                 and
                                                 Consonantia.</p>
@@ -113,7 +113,7 @@ class LandingPage extends React.Component {
                                                          className="img-fluid"
                                                          style={{height: '225px'}}/></a>
                                         <div className="px-md-3">
-                                            <h3 className="text-primary">Air Freight</h3>
+                                            <h3  style={{color:'#F69314'}}>Air Freight</h3>
                                             <p>Far far away, behind the word mountains, far from the countries Vokalia
                                                 and
                                                 Consonantia.</p>
@@ -408,7 +408,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>Can I accept both
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>Can I accept both
                                             Paypal and Stripe?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. </p>
@@ -416,7 +416,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>What available is
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>What available is
                                             refund period?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. </p>
@@ -424,7 +424,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>Can I accept both
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>Can I accept both
                                             Paypal and Stripe?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. </p>
@@ -432,7 +432,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>What available is
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>What available is
                                             refund period?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. </p>
@@ -442,7 +442,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>Where are you
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>Where are you
                                             from?
                                         </h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
@@ -451,7 +451,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>What is your
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>What is your
                                             opening
                                             time?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
@@ -460,7 +460,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>Can I accept both
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>Can I accept both
                                             Paypal and Stripe?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. </p>
@@ -468,7 +468,7 @@ class LandingPage extends React.Component {
 
                                     <div className="mb-5" data-aos="fade-up" data-aos-delay="100">
                                         <h3 className="text-black h4 mb-4"><span
-                                            className="icon-question_answer text-primary mr-2"></span>What available is
+                                            className="icon-question_answer mr-2" style={{color:'#F69314'}}></span>What available is
                                             refund period?</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. </p>
@@ -490,7 +490,7 @@ class LandingPage extends React.Component {
                                 <div className="col-lg-5 mr-auto p-lg-5 mt-4 mt-lg-0 order-lg-1" data-aos="fade-right"
                                      data-aos-delay="">
                                     <h2 className="mb-4 text-black">Why Us</h2>
-                                    <h4 className="text-primary">We work quickly and efficiently!</h4>
+                                    <h4 style={{color:'#F69314'}}>We work quickly and efficiently!</h4>
                                     <p>A small river named Duden flows by their place and supplies it with the necessary
                                         regelialia. It is a paradisematic country, in which roasted parts of sentences
                                         fly
