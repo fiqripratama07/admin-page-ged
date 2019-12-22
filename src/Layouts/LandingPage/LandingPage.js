@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import Ship from '../../images/ship.jpg';
 import Plane from '../../images/plane.jpg';
-import Box from '../../images/box.jpg';
 
 class LandingPage extends React.Component {
     render() {
@@ -352,7 +351,7 @@ class LandingPage extends React.Component {
                                     </figure>
                                     <h3 className="font-size-20 text-black">Safira Andjani</h3>
                                     <span
-                                        className="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">Frontend Dev</span>
+                                        className="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">Mobile Dev</span>
                                     <p className="mb-4">Far far away, behind the word mountains, far from the countries
                                         Vokalia and Consonantia, there live the blind texts.</p>
                                     <div className="block-social-1">
