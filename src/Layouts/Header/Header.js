@@ -1,5 +1,4 @@
 import * as React from "react";
-import {Link} from "react-router-dom";
 import Bars from '../../images/bars.png';
 
 class Header extends React.Component {
@@ -19,6 +18,7 @@ class Header extends React.Component {
                                            placeholder="Search for..." aria-label="Search"
                                            aria-describedby="basic-addon2"/>
                                     <div className="input-group-append">
+                                        <h3>Welcome, Admin!!</h3>
                                         <button className="btn btn-primary" type="button">
                                             <i className="fas fa-search fa-sm"/>
                                         </button>

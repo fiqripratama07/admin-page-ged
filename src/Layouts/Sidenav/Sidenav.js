@@ -60,12 +60,22 @@ class Sidenav extends React.Component {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link " to="/add-transaction">
-                                        <i className="ni ni-ruler-pencil text-orange"></i> Form Transactions
+                                    <Link className="nav-link " to="/add-user">
+                                        <i className="ni ni-single-02 text-primary"></i> Form Users
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link " to="/list-users">
+                                    <Link className="nav-link " to="/list-user">
+                                        <i className="ni ni-satisfied text-yellow"></i> Data Table Users
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link " to="/add-transaction">
+                                        <i className="ni ni-ruler-pencil text-primary"></i> Form Transactions
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link " to="/list-transaction">
                                         <i className="ni ni-bullet-list-67 text-yellow"></i> Data Table Transactions
                                     </Link>
                                 </li>

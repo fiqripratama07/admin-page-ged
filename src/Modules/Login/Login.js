@@ -27,12 +27,12 @@ class Login extends React.Component {
 
     render() {
         return (
-            <body className="bg-gradient-primary">
+            <body style={{minHeight:'900px'}} className="bg-gradient-primary">
             <div className="container">
 
-                <div className="row justify-content-center">
+                <div className="row justify-content-center" style={{backgroundImage: `url('https://source.unsplash.com/pSyfecRCBQA/1920x780')`}}>
 
-                    <div className="col-xl-10 col-lg-12 col-md-9">
+                    <div className="col-xl-10 col-lg-12 col-md-9" style={{marginTop:'200px'}}>
                         <div className="card o-hidden border-0 shadow-lg my-5">
                             <div className="card-body p-0">
 
