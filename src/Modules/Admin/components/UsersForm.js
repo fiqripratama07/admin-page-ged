@@ -40,6 +40,12 @@ class UsersForm extends React.Component {
                                                        placeholder="Enter Email. . ."
                                                 />
                                             </div>
+                                            <div className="form-group">
+                                                <label>Roles</label>
+                                                <select className="custom-select mr-sm-3" id="type-menu">
+                                                    <option selected>Choose Roles</option>
+                                                </select>
+                                            </div>
                                             <div className="form-group col">
                                                 <button type="button"
                                                         className="btn btn-google btn-outline- btn-user btn-block">

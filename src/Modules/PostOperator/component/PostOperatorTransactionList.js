@@ -1,6 +1,6 @@
 import React from "react";
 
-class ListUser extends React.Component {
+class PostOperatorTransactionList extends React.Component {
     render() {
         return (
             <div className="card o-hidden border-0 shadow-lg my-2"
@@ -15,11 +15,14 @@ class ListUser extends React.Component {
                                 <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Username</th>
-                                        <th>Password</th>
-                                        <th>Email</th>
-                                        <th>Detail</th>
+                                        <th>Id</th>
+                                        <th>Name of the Sender</th>
+                                        <th>Recipient's Name</th>
+                                        <th>Address Origin</th>
+                                        <th>Address Destination</th>
+                                        <th>Package Name</th>
+                                        <th>Package Weight</th>
+                                        <th>Total Price</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -30,10 +33,10 @@ class ListUser extends React.Component {
                     </div>
                 </div>
             </div>
-
         )
     }
-
 }
 
-export default ListUser;
+
+
+export default PostOperatorTransactionList;

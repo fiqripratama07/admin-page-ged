@@ -10,10 +10,16 @@ export async function listPeople() {
         .then((res)=>res.data)
 }
 
-export async function fetchDataListPeople() {
-    return await fetch("https://jsonplaceholder.typicode.com/posts", {method: "GET"})
-        .then((response) => {
-                return response.json();
-            }
-        );
+export async function listTransactions() {
+    return await Api.get('transactions')
+        .then((res)=>res.data)
 }
+
+
+// export async function fetchDataListPeople() {
+//     return await fetch("https://jsonplaceholder.typicode.com/posts", {method: "GET"})
+//         .then((response) => {
+//                 return response.json();
+//             }
+//         );
+// }
