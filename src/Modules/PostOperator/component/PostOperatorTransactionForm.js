@@ -5,7 +5,7 @@ import * as PostOperatorServices from '../services/PostOperatorService';
 
 class PostOperatorTransactionForm extends React.Component {
 
-    MenuLoad() {
+    TransactionLoad() {
         const {dispatch, loading, locations} = this.props;
         console.log('load locations', locations);
         PostOperatorServices.listLocation()
