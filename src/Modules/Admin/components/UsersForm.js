@@ -28,6 +28,16 @@ class UsersForm extends React.Component {
         this.props.dispatch({type: 'HANDLE_PASSWORD', password: {...this.props.addUser, password: value}})
     }
 
+    handleChangeEmail = (event) => {
+        const value = event.target.value;
+        this.props.dispatch({type: 'HANDLE_EMAIL', email: {...this.props.addUser, email: value}})
+    }
+
+    handleChangeRoles = (event) => {
+        const value = event.target.value;
+        this.props.dispatch({type: 'HANDLE_ROLES', roles: {...this.props.addUser.roles, roleId:value}})
+    }
+
     render() {
         console.log("STATE AFTER", this.props.addUser);
         return (
@@ -62,7 +72,6 @@ class UsersForm extends React.Component {
                                                        placeholder="Enter Password. . ."
                                                        name="password"
                                                        onChange={this.handleChangePassword}
-
                                                 />
                                             </div>
                                             <div className="form-group">
@@ -70,16 +79,16 @@ class UsersForm extends React.Component {
                                                 <input type="text" className="form-control form-control-user"
                                                        placeholder="Enter Email. . ."
                                                        name="email"
-
+                                                       onChange={this.handleChangeEmail}
                                                 />
                                             </div>
                                             <div className="form-group">
                                                 <label>Roles</label>
-                                                <select className="custom-select mr-sm-3" id="type-menu">
+                                                <select onChange={this.handleChangeRoles} className="custom-select mr-sm-3" id="type-menu">
                                                     <option selected>Choose Roles</option>
-                                                    <option>admin</option>
-                                                    <option>post operator</option>
-                                                    <option>courier</option>
+                                                    <option value="1">Post Operator</option>
+                                                    <option value="2">Storage Operator</option>
+                                                    <option value="3">Courier</option>
                                                 </select>
                                             </div>
                                             <div className="form-group col">
