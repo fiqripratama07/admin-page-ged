@@ -16,8 +16,8 @@ export async function listTransactions() {
 }
 
 
-// export async function fetchDataListPeople() {
-//     return await fetch("https://jsonplaceholder.typicode.com/posts", {method: "GET"})
+// export async function fetchDataListTransactions() {
+//     return await fetch("https://192.168.43.120:8085/transactions", {method: "GET"})
 //         .then((response) => {
 //                 return response.json();
 //             }

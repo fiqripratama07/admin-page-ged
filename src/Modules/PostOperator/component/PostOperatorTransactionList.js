@@ -1,6 +1,37 @@
 import React from "react";
+import {connect} from "react-redux";
+import * as PostOperatorService from "../services/PostOperatorService";
 
 class PostOperatorTransactionList extends React.Component {
+
+    TransactionsLoad() {
+        const {dispatch, loading, transaction} = this.props;
+        PostOperatorService.listTransactions()
+            .then((transaction) => {
+                dispatch({type: 'LIST_TRANSACTION', loading, transaction});
+                console.log("TRX", transaction);
+            })
+            .catch((err) => {
+                dispatch({type: 'LIST_TRANSACTION', loading, transaction: []});
+            })
+    }
+
+    componentDidMount() {
+        if (this.props.loading) {
+            this.TransactionsLoad();
+        }
+    }
+    //
+    // componentDidMount() {
+    //     this.fetchListTransactions().then(r=>r);
+    // }
+    //
+    // fetchListTransactions = async () => {
+    //     const resultData = await fetchDataListTransactions();
+    //     console.log(resultData, "data")
+    //     this.props.fetchData(resultData);
+    // }
+
     render() {
         return (
             <div className="card o-hidden border-0 shadow-lg my-2"
@@ -26,6 +57,14 @@ class PostOperatorTransactionList extends React.Component {
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {/*{this.props.listTransactions.map((element, index) => {*/}
+                                    {/*    return <tr key={index}>*/}
+                                    {/*        <td> width="10px">{index+1}</td>*/}
+                                    {/*        <td>{element.originName}</td>*/}
+                                    {/*        <td>{element.destinationName}</td>*/}
+                                    {/*        <td></td>*/}
+                                    {/*    </tr>*/}
+                                    {/*})}*/}
                                     </tbody>
                                 </table>
                             </div>
@@ -37,6 +76,19 @@ class PostOperatorTransactionList extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {...state.transaction}
+}
+
+// const mapDispatchToProps = (dispatch) => {
+//     return{
+//         fetchData:(data) =>{
+//             console.log(data, "isi")
+//             dispatch({type: "LIST_TRANSACTION", payload: data})
+//         }
+//     }
+// }
 
 
-export default PostOperatorTransactionList;
+
+export default connect(mapStateToProps)(PostOperatorTransactionList);
