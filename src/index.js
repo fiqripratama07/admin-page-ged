@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './style/css/App.css';
+import './style/css/index.css';
+import './style/css/all.css';
+import './style/css/style.css';
+import './style/css/sb-admin-2.css';
+import './style/css/fontawesome.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
