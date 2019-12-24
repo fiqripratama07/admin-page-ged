@@ -1,6 +1,37 @@
 import React from "react";
+import {connect} from "react-redux";
+import * as PostOperatorService from "../services/PostOperatorService";
 
-class ListUser extends React.Component {
+class PostOperatorTransactionList extends React.Component {
+
+    TransactionsLoad() {
+        const {dispatch, loading, transaction} = this.props;
+        PostOperatorService.listTransactions()
+            .then((transaction) => {
+                dispatch({type: 'LIST_TRANSACTION', loading, transaction});
+                console.log("TRX", transaction);
+            })
+            .catch((err) => {
+                dispatch({type: 'LIST_TRANSACTION', loading, transaction: []});
+            })
+    }
+
+    componentDidMount() {
+        if (this.props.loading) {
+            this.TransactionsLoad();
+        }
+    }
+    //
+    // componentDidMount() {
+    //     this.fetchListTransactions().then(r=>r);
+    // }
+    //
+    // fetchListTransactions = async () => {
+    //     const resultData = await fetchDataListTransactions();
+    //     console.log(resultData, "data")
+    //     this.props.fetchData(resultData);
+    // }
+
     render() {
         return (
             <div className="card o-hidden border-0 shadow-lg my-2"
@@ -15,14 +46,25 @@ class ListUser extends React.Component {
                                 <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Username</th>
-                                        <th>Password</th>
-                                        <th>Email</th>
-                                        <th>Detail</th>
+                                        <th>Id</th>
+                                        <th>Name of the Sender</th>
+                                        <th>Recipient's Name</th>
+                                        <th>Address Origin</th>
+                                        <th>Address Destination</th>
+                                        <th>Package Name</th>
+                                        <th>Package Weight</th>
+                                        <th>Total Price</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {/*{this.props.listTransactions.map((element, index) => {*/}
+                                    {/*    return <tr key={index}>*/}
+                                    {/*        <td> width="10px">{index+1}</td>*/}
+                                    {/*        <td>{element.originName}</td>*/}
+                                    {/*        <td>{element.destinationName}</td>*/}
+                                    {/*        <td></td>*/}
+                                    {/*    </tr>*/}
+                                    {/*})}*/}
                                     </tbody>
                                 </table>
                             </div>
@@ -30,10 +72,23 @@ class ListUser extends React.Component {
                     </div>
                 </div>
             </div>
-
         )
     }
-
 }
 
-export default ListUser;
+const mapStateToProps = (state) => {
+    return {...state.transaction}
+}
+
+// const mapDispatchToProps = (dispatch) => {
+//     return{
+//         fetchData:(data) =>{
+//             console.log(data, "isi")
+//             dispatch({type: "LIST_TRANSACTION", payload: data})
+//         }
+//     }
+// }
+
+
+
+export default connect(mapStateToProps)(PostOperatorTransactionList);

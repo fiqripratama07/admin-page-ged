@@ -31,8 +31,7 @@ class PostOperatorTransactionForm extends React.Component {
                      style={{marginRight: '20px', marginTop: '100px', marginBottom: '100px', minHeight: "900px"}}>
                     <div className="margin-10px">
                         <div className="card shadow mb-4">
-                            <div className="card-header py-3">
-                                <div className="card o-hidden border-0 shadow-lg my-2">
+                                    <div className="card o-hidden border-0 shadow-lg my-2">
                                     <div className="card-body p-0">
                                         <div className="row justify-content-center">
                                             <div className="col-md-12 p-3">
@@ -99,7 +98,6 @@ class PostOperatorTransactionForm extends React.Component {
                                         </form>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
