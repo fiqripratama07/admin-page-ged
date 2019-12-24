@@ -1,9 +1,45 @@
 import React from "react";
 import {connect} from 'react-redux';
-
+import * as AdminServices from '../service/AdminService';
 
 class UsersForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        AdminServices.save(this.props.order)
+            .then(resp => {
+                alert("Save Success");
+            })
+            .catch(err => alert("Save Error"))
+    }
+
+    handleChangeUsername = (event) => {
+        const value = event.target.value;
+        this.props.dispatch({type: 'HANDLE_USERNAME', userName: {...this.props.addUser, userName: value}})
+    }
+
+    handleChangePassword = (event) => {
+        const value = event.target.value;
+        this.props.dispatch({type: 'HANDLE_PASSWORD', password: {...this.props.addUser, password: value}})
+    }
+
+    handleChangeEmail = (event) => {
+        const value = event.target.value;
+        this.props.dispatch({type: 'HANDLE_EMAIL', email: {...this.props.addUser, email: value}})
+    }
+
+    handleChangeRoles = (event) => {
+        const value = event.target.value;
+        this.props.dispatch({type: 'HANDLE_ROLES', roles: {...this.props.addUser.roles, roleId:value}})
+    }
+
     render() {
+        console.log("STATE AFTER", this.props.addUser);
         return (
             <div>
                 <div className="card o-hidden border-0 shadow-lg my-2"
@@ -26,24 +62,33 @@ class UsersForm extends React.Component {
                                                 <label>Username</label>
                                                 <input type="text" className="form-control form-control-user"
                                                        placeholder="Enter Username. . ."
+                                                       name="userName"
+                                                       onChange={this.handleChangeUsername}
                                                 />
                                             </div>
                                             <div className="form-group">
                                                 <label>Password</label>
                                                 <input type="text" className="form-control form-control-user"
                                                        placeholder="Enter Password. . ."
+                                                       name="password"
+                                                       onChange={this.handleChangePassword}
                                                 />
                                             </div>
                                             <div className="form-group">
                                                 <label>Email</label>
                                                 <input type="text" className="form-control form-control-user"
                                                        placeholder="Enter Email. . ."
+                                                       name="email"
+                                                       onChange={this.handleChangeEmail}
                                                 />
                                             </div>
                                             <div className="form-group">
                                                 <label>Roles</label>
-                                                <select className="custom-select mr-sm-3" id="type-menu">
+                                                <select onChange={this.handleChangeRoles} className="custom-select mr-sm-3" id="type-menu">
                                                     <option selected>Choose Roles</option>
+                                                    <option value="1">Post Operator</option>
+                                                    <option value="2">Storage Operator</option>
+                                                    <option value="3">Courier</option>
                                                 </select>
                                             </div>
                                             <div className="form-group col">
@@ -51,9 +96,11 @@ class UsersForm extends React.Component {
                                                         className="btn btn-google btn-outline- btn-user btn-block">
                                                     Cancel
                                                 </button>
-                                                <button type="button"
+                                                <button type="submit"
                                                         style={{marginBottom: '30px'}}
-                                                        className="btn btn-outline-success btn-user btn-block">
+                                                        className="btn btn-outline-success btn-user btn-block"
+                                                        onSubmit={this.handleSubmit}
+                                                >
                                                     Save User
                                                 </button>
                                             </div>
@@ -69,8 +116,9 @@ class UsersForm extends React.Component {
     }
 }
 
+
 function mapStateToProps(state) {
-    return {...state.transaction}
+    return {...state.admin}
 }
 
 export default connect(mapStateToProps)(UsersForm);
