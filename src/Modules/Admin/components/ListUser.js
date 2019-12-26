@@ -5,7 +5,7 @@ import * as AdminServices from '../service/AdminService';
 class ListUser extends React.Component {
 
     UserLoad() {
-        const {dispatch,users} = this.props;
+        const {dispatch, users} = this.props;
         AdminServices.listUser()
             .then((users) => {
                 dispatch({type: 'LIST_USER_SUCCESS', users});
@@ -52,8 +52,8 @@ class ListUser extends React.Component {
                                             <td>{user.userName}</td>
                                             <td>{user.password}</td>
                                             <td>{user.email}</td>
-                                            {user.roles.map((role,i)=>{
-                                                return(
+                                            {user.roles.map((role, i) => {
+                                                return (
                                                     <td>{role.roleName}</td>
                                                 )
                                             })}

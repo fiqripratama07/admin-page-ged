@@ -5,14 +5,14 @@ import * as PostOperatorService from "../services/PostOperatorService";
 class PostOperatorTransactionList extends React.Component {
 
     TransactionsLoad() {
-        const {dispatch, loading, transaction} = this.props;
+        const {dispatch, loading, listTransaction} = this.props;
         PostOperatorService.listTransactions()
-            .then((transaction) => {
-                dispatch({type: 'LIST_TRANSACTION', loading, transaction});
-                console.log("TRX", transaction);
+            .then((listTransaction) => {
+                dispatch({type: 'LIST_TRANSACTION', loading, listTransaction});
+                console.log("TRX", listTransaction);
             })
             .catch((err) => {
-                dispatch({type: 'LIST_TRANSACTION', loading, transaction: []});
+                dispatch({type: 'LIST_TRANSACTION', loading, listTransaction: []});
             })
     }
 
@@ -21,21 +21,11 @@ class PostOperatorTransactionList extends React.Component {
             this.TransactionsLoad();
         }
     }
-    //
-    // componentDidMount() {
-    //     this.fetchListTransactions().then(r=>r);
-    // }
-    //
-    // fetchListTransactions = async () => {
-    //     const resultData = await fetchDataListTransactions();
-    //     console.log(resultData, "data")
-    //     this.props.fetchData(resultData);
-    // }
 
     render() {
         return (
             <div className="card o-hidden border-0 shadow-lg my-2"
-                 style={{ marginRight:'20px', marginTop: '100px', marginBottom: '100px', minHeight: "900px"}}>
+                 style={{marginRight: '20px', marginTop: '100px', marginBottom: '100px', minHeight: "900px"}}>
                 <div className="margin-10px">
                     <div className="card shadow mb-4">
                         <div className="card-header py-3">
@@ -56,16 +46,26 @@ class PostOperatorTransactionList extends React.Component {
                                         <th>Total Price</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    {/*{this.props.listTransactions.map((element, index) => {*/}
-                                    {/*    return <tr key={index}>*/}
-                                    {/*        <td> width="10px">{index+1}</td>*/}
-                                    {/*        <td>{element.originName}</td>*/}
-                                    {/*        <td>{element.destinationName}</td>*/}
-                                    {/*        <td></td>*/}
-                                    {/*    </tr>*/}
-                                    {/*})}*/}
-                                    </tbody>
+                                    {this.props.listTransaction.map((trans, index)=>{
+                                        return(
+                                            <tbody>
+                                            <tr key={index}>
+                                                <td>{index + 1}</td>
+                                                <td>{trans.originName}</td>
+                                                <td>{trans.destinationName}</td>
+                                                <td>{trans.originAddress.addressLocations.name}</td>
+                                                <td>{trans.destinationAddresses.addressLocations.name}</td>
+                                                <td>{trans.packages.itemName}</td>
+                                                <td>{trans.packages.weight}</td>
+                                                <td>{ new Intl.NumberFormat('ja-Jp', {
+                                                    style: 'currency',
+                                                    currency: 'IDR'
+                                                }).format(trans.totalPrice)}</td>
+                                            </tr>
+
+                                            </tbody>
+                                        )
+                                    })}
                                 </table>
                             </div>
                         </div>
@@ -79,16 +79,5 @@ class PostOperatorTransactionList extends React.Component {
 const mapStateToProps = (state) => {
     return {...state.transaction}
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return{
-//         fetchData:(data) =>{
-//             console.log(data, "isi")
-//             dispatch({type: "LIST_TRANSACTION", payload: data})
-//         }
-//     }
-// }
-
-
 
 export default connect(mapStateToProps)(PostOperatorTransactionList);

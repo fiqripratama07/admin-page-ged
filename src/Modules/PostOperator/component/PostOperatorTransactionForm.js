@@ -20,7 +20,7 @@ class PostOperatorTransactionForm extends React.Component {
 
     componentDidMount() {
         if (this.props.loading) {
-            this.MenuLoad();
+            this.TransactionLoad();
         }
     }
 
